@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.hashcode.unfinger.MainActivity"
+    tools:context="com.hashcode.unfinger.Activities.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <TextView
@@ -14,21 +14,51 @@
         android:text="Enter your IP Address "
         android:gravity="center"
         android:textSize="20sp"
-        android:layout_marginTop="129dp"
         android:id="@+id/textView"
-        android:layout_alignParentTop="true"
+        android:textColor="@color/colorAccent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/ip_address_edit_text"
         android:layout_alignStart="@+id/ip_address_edit_text" />
 
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/text_cardview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"></android.support.v7.widget.CardView>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+    <Button
+        android:id="@+id/unfing_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  UNFING ME ! "
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorPrimary"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="103dp" />
 
     <EditText
         android:id="@+id/ip_address_edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:ems="10"
-        android:gravity="center"
-        android:inputType="numberDecimal"
-        android:layout_below="@+id/textView"
+        android:inputType="text"
+        android:layout_marginBottom="83dp"
+        android:layout_above="@+id/text_cardview"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
