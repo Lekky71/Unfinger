@@ -7,9 +7,14 @@
             android:icon="@android:drawable/ic_menu_help"
             android:title="How To Use" />
         <item
-            android:id="@+id/nav_payment"
+            android:id="@+id/nav_share"
             android:icon="@android:drawable/ic_menu_share"
             android:title="Share this app" />
+
+        <item
+            android:id="@+id/nav_review"
+            android:icon="@android:drawable/ic_menu_share"
+            android:title="Submit A Review" />
 
     </group>
 
