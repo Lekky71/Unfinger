@@ -1,5 +1,6 @@
 package com.hashcode.unfinger.Activities
 
+import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Context
 import android.net.ConnectivityManager
@@ -9,6 +10,7 @@ import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
+import android.view.MenuItem
 import android.widget.EditText
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -30,6 +32,9 @@ class ReviewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_review)
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setHomeButtonEnabled(true)
+        supportActionBar!!.title = "Submit A Review"
         mFirebaseDatabase = FirebaseDatabase.getInstance().reference
         val fab = findViewById(R.id.send_review_button) as FloatingActionButton
         reviewEditText = findViewById(R.id.review_edit_text) as EditText
@@ -96,6 +101,14 @@ class ReviewActivity : AppCompatActivity() {
     fun isOnline(context: Context): Boolean {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         return connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).state == NetworkInfo.State.CONNECTED || connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).state == NetworkInfo.State.CONNECTED
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return super.onOptionsItemSelected(item)
+        var id = item!!.itemId
+        if(id == R.id.home){
+            onBackPressed()
+        }
     }
 
 }

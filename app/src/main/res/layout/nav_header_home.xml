@@ -2,9 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+
     android:layout_height="@dimen/nav_header_height"
     xmlns:tool="http://schemas.android.com/tools"
-    android:background="@color/colorPrimary"
+    android:background="@mipmap/drawer_pic"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
 

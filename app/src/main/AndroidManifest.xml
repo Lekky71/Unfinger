@@ -31,7 +31,11 @@
             android:name=".Activities.HelpActivity"
             android:label="@string/title_activity_help"
             android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hashcode.unfinger.Activities.MainActivity" />
+        </activity>
         <activity
             android:name=".Activities.ReviewActivity"
             android:label="@string/title_activity_review"
