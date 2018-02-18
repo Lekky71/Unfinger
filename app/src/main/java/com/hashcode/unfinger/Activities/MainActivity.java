@@ -52,14 +52,14 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ipAddressEditText = (EditText) findViewById(R.id.ip_address_edit_text);
-        unFingButton = (Button) findViewById(R.id.unfing_button);
-        saveIpButton = (Button) findViewById(R.id.save_ip_button);
-        loggingOutBar = (ProgressBar) findViewById(R.id.loggingOutProgressBar);
+        ipAddressEditText = findViewById(R.id.ip_address_edit_text);
+        unFingButton = findViewById(R.id.unfing_button);
+        saveIpButton = findViewById(R.id.save_ip_button);
+        loggingOutBar = findViewById(R.id.loggingOutProgressBar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
             @Override
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         if(help != null){
             help.cancel();
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
             startActivity(new Intent(MainActivity.this, ReviewActivity.class));
             return true;
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;    }
 

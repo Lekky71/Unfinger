@@ -30,15 +30,15 @@ class ReviewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_review)
-        val toolbar = findViewById(R.id.toolbar) as Toolbar
+        val toolbar : Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeButtonEnabled(true)
         supportActionBar!!.title = "Submit A Review"
         mFirebaseDatabase = FirebaseDatabase.getInstance().reference
-        val fab = findViewById(R.id.send_review_button) as FloatingActionButton
-        reviewEditText = findViewById(R.id.review_edit_text) as EditText
-        nameEditText = findViewById(R.id.reviewer_name_edit_text) as EditText
+        val fab : FloatingActionButton = findViewById(R.id.send_review_button)
+        reviewEditText = findViewById(R.id.review_edit_text)
+        nameEditText = findViewById(R.id.reviewer_name_edit_text)
         if (savedInstanceState != null){
             nameEditText.setText(savedInstanceState.getString(NAME_STORE))
             reviewEditText.setText(savedInstanceState.getString(REVIEW_STORE))
